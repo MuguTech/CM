@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package octopus;
+
+import "osi_common.proto";
+import "osi_groundtruth.proto";
+
+// The simulation data from simulators, like VTD.
+message SimData {
+  // The OSI GroundTruth list, one by a frame.
+  repeated osi3.GroundTruth frames = 1;
+}

@@ -1,0 +1,22 @@
+
+#include "V_TrafficSocket.h"
+
+
+
+
+int main()
+{
+    V_TrafficSocket::get_instance();
+
+    char data[100] = {0};
+
+    for (size_t i = 0; i < 10; i++)
+    {
+        sprintf(data, "send msg %ld", i);
+        V_TrafficSocket::get_instance()->send_msg(data, 100);
+        sleep(1);
+    }
+
+    return 0;
+}
+
